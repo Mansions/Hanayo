@@ -120,16 +120,19 @@ func main() {
 	var configDefaults = map[*string]string{
 		&config.ListenTo:         ":45221",
 		&config.CookieSecret:     rs.String(46),
-		&config.AvatarURL:        "https://a.ripple.moe",
-		&config.BaseURL:          "https://ripple.moe",
-		&config.BanchoAPI:        "https://c.ripple.moe",
-		&config.CheesegullAPI:    "https://storage.ripple.moe/api",
+		&config.AvatarURL:        "https://a.themansions.nl",
+		&config.RedisEnable:        "true",
+		&config.AvatarsFolder:    "/home/ripple/avatar/avatars"
+		&config.RedisAddress:     "localhost:6379"
+		&config.BaseURL:          "https://themansions.nl",
+		&config.BanchoAPI:        "https://c.themansions.nl",
+		&config.CheesegullAPI:    "http://storage.hatsunai.me/api",
 		&config.API:              "http://localhost:40001/api/v1/",
 		&config.APISecret:        "Potato",
 		&config.IP_API:           "https://ip.zxq.co",
-		&config.DiscordServer:    "#",
-		&config.MainRippleFolder: "/home/ripple/ripple",
-		&config.MailgunFrom:      `"Ripple" <noreply@ripple.moe>`,
+		&config.DiscordServer:    "https://discord.gg/EbbMmBR",
+		&config.MainRippleFolder: "/home/ripple",
+		&config.MailgunFrom:      `"Mansions" <erencorn@gmail.com>`,
 	}
 	for key, value := range configDefaults {
 		if *key == "" {
@@ -322,7 +325,7 @@ func generateEngine() *gin.Engine {
 	r.Any("/blog/*url", blogRedirect)
 
 	r.GET("/help", func(c *gin.Context) {
-		c.Redirect(301, "https://support.ripple.moe")
+		c.Redirect(301, "https://discord.gg/EbbMmBR")
 	})
 
 	loadSimplePages(r)
@@ -333,5 +336,5 @@ func generateEngine() *gin.Engine {
 }
 
 const alwaysRespondText = `Ooops! Looks like something went really wrong while trying to process your request.
-Perhaps report this to a Ripple developer?
+Perhaps report this to a Meliodas?
 Retrying doing again what you were trying to do might work, too.`
