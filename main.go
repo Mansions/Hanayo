@@ -97,9 +97,6 @@ var (
 )
 
 func main() {
-	err := agplwarning.Warn("ripple", "Hanayo")
-	if err != nil {
-		fmt.Println(err)
 	}
 
 	fmt.Println("hanayo " + version)
