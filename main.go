@@ -122,8 +122,8 @@ func main() {
 		&config.CookieSecret:     rs.String(46),
 		&config.AvatarURL:        "https://a.themansions.nl",
 		&config.RedisEnable:        "true",
-		&config.AvatarsFolder:    "/home/ripple/avatar/avatars"
-		&config.RedisAddress:     "localhost:6379"
+		&config.AvatarsFolder:    "/home/ripple/avatar/avatars",
+		&config.RedisAddress:     "localhost:6379",
 		&config.BaseURL:          "https://themansions.nl",
 		&config.BanchoAPI:        "https://c.themansions.nl",
 		&config.CheesegullAPI:    "http://storage.hatsunai.me/api",
