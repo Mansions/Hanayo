@@ -28,6 +28,7 @@ import (
 	"github.com/Mansions/hanayo/services"
 	"github.com/Mansions/hanayo/services/cieca"
 	"zxq.co/ripple/schiavolib"
+	"zxq.co/ripple/agplwarning"
 	"zxq.co/x/rs"
 )
 
@@ -97,7 +98,7 @@ var (
 )
 
 func main() {
-	err := "no"
+	err := agplwarning.Warn("ripple", "Hanayo")
 	if err != nil {
 		fmt.Println(err)
 	}
