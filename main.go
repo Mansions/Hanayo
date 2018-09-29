@@ -120,7 +120,6 @@ func main() {
 		&config.ListenTo:         ":45221",
 		&config.CookieSecret:     rs.String(46),
 		&config.AvatarURL:        "https://a.themansions.nl",
-		&config.RedisEnable:        fmt.Sprintf("%t",true),
 		&config.AvatarsFolder:    "/home/ripple/avatar/avatars",
 		&config.RedisAddress:     "localhost:6379",
 		&config.BaseURL:          "https://themansions.nl",
