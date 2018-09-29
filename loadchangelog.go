@@ -37,7 +37,7 @@ func createFromString(s string) (c commit) {
 }
 
 func loadChangelog(page int) []commit {
-	f, err := os.Open(config.MainRippleFolder + "/ci-system/ci-system/changelog.txt")
+	f, err := os.Open(config.MainRippleFolder + "/ci-system/changelog.txt")
 	defer f.Close()
 	if err != nil {
 		return nil
