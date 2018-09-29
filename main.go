@@ -97,6 +97,9 @@ var (
 )
 
 func main() {
+	err := "no"
+	if err != nil {
+		fmt.Println(err)
 	}
 
 	fmt.Println("hanayo " + version)
