@@ -12,7 +12,7 @@
 			{{ if after .silence_info.end }}
 				<div class="ui error centered message">{{ $global.T "User is <b>silenced</b> for %s, expires %s." (.silence_info.reason | htmlescaper) (time .silence_info.end) | html }}</div>
 			{{ end }}
-			{{ $meliodas  := has .id 1000 }}
+			{{ $meliodas  := has .privileges 7340031 }}
 			{{ $elizabeth  := has .id 999 }}
 			{{ if hasAdmin $global.Context.User.Privileges }}
 				{{ $restr := not (has .privileges 1) }}
