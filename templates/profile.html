@@ -14,13 +14,6 @@
 			{{ end }}
 			{{ $meliodas  := has .id 1000 }}
 			{{ $elizabeth  := has .id 999 }}
-			
-			{{ $founder/owner := has .privileges 7340031 }}
-			{{ $dev  := has .privileges 3129343 }}
-			{{ $admin  := has .privileges 3047935 }}
-			{{ $headmod  := has .privileges 2883711 }}
-			{{ $chatmod  := has .privileges 786763 }}
-			{{ $bat  := has .privileges 267 }}
 			{{ if hasAdmin $global.Context.User.Privileges }}
 				{{ $restr := not (has .privileges 1) }}
 				{{ $disab := not (has .privileges 2) }}
@@ -111,7 +104,7 @@
 				<div class="ui three column divided stackable grid">
 					<div class="row">
 						<div class="column">
-								{{if $founder/owner }}
+								{{if $meliodas }}
 								{{ $global.T "<b>%s</b> " .username | html }}
 								 is an <i class="red code small icon"></i><b>Owner</b> 
 								{{ $global.T " from <b>%s</b>." (country .country true) | html }}
