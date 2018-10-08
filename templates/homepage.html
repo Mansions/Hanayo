@@ -8,38 +8,37 @@
 	{{ $ds := band $cf 1 }}
 	{{ $   := . }}
 	<div class="ui container">
-			<div class="ui center aligned segment">
-				<img src="/static/logos/logo-{{ randomLogoColour }}{{ if $ds }}-dark{{ end }}.svg">
-			</div>
-		{{ $set := systemSettings "website_home_alert" }}
-		{{ with $set.website_home_alert.String }}
-			<div class="ui warning message">
-				{{ . | html }}
+		<div class="ui center aligned segment">
+			<img src="/static/logos/logo-{{ randomLogoColour }}{{ if $ds }}-dark{{ end }}.svg">
+		</div>
+	{{ $set := systemSettings "website_home_alert" }}
+	{{ with $set.website_home_alert.String }}
+		<div class="ui warning message">
+			{{ . | html }}
+		</div>
+	{{ end }}
+	{{/* Not logged in block */}}
+	{{ if not .Context.User.ID }}
+		<div class="ui segment">
+			<h1 class="ui header">{{ .T "Welcome to Mansions." }}</h1>
+			<p>
+				{{ .T "You look new here. Allow us to introduce you to what Mansions is." }}
+			</p>
+			<p>
+				{{ .T "Mansions is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others. <b>we currently have %s users online and %s registered users!</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+			</p>
+			<h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Mansions; It's risk-free: (you won't get banned on the official server if you play on Mansions).<br>You can also switch anytime between the official osu! server and Mansions" | html }}</h3>
+		</div>
+		<div class="ui segment">
+		</div>
+	{{ else }}
+		<div class="ui segment">
+			<h1 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
+			<p>
+				{{ .T "Welcome back to Mansions. We currently have <b>%s online users and %s total registed users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+			</p>
 			</div>
 		{{ end }}
-		{{/* Not logged in block */}}
-		{{ if not .Context.User.ID }}
-			<div class="ui segment">
-				<h1 class="ui header">{{ .T "Welcome to Mansions." }}</h1>
-				<p>
-					{{ .T "You look new here. Allow us to introduce you to what Mansions is." }}
-				</p>
-				<p>
-					{{ .T "Mansions is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others. <b>we currently have %s users online and %s registered users!</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
-				</p>
-				<h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Mansions; It's risk-free: (you won't get banned on the official server if you play on Mansions).<br>You can also switch anytime between the official osu! server and Mansions" | html }}</h3>
-			</div>
-			<div class="ui segment">
-			</div>
-		{{ else }}
-			<div class="ui segment">
-				<h1 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
-				<p>
-					{{ .T "Welcome back to Mansions. We currently have <b>%s online users and %s total registed users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
-				</p>
-			</div>
-		{{ end }}
-			</div>
 	</div>
 	{{ end }}
 	
