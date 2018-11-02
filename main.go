@@ -24,7 +24,7 @@ import (
 	"github.com/Mansions/hanayo/modules/btcaddress"
 	"github.com/Mansions/hanayo/modules/btcconversions"
 	"github.com/Mansions/hanayo/routers/oauth"
-	"zxq.co/ripple/hanayo/routers/pagemappings"
+	"github.com/Mansions/hanayo/routers/pagemappings"
 	"github.com/Mansions/hanayo/services"
 	"github.com/Mansions/hanayo/services/cieca"
 	"zxq.co/ripple/schiavolib"
