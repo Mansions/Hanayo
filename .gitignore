@@ -8,3 +8,8 @@ semantic/gulpfile.tmp.*.js
 /_
 static/oauth-apps/*
 !static/oauth-apps/.keep
+.idea/hanayo.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
